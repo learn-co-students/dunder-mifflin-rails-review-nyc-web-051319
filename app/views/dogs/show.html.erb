@@ -1,10 +1,16 @@
 <h1>Dog by id number</h1>
 <h2><%=@dog.name%></h2>
 <ul>
-  <li><b>Breed: </b><%=@dog.breed%></li>
-  <li><b>Age: </b><%=@dog.age%></li>
-  <li><b>Owners: </b> do this</li>
+  <li><b>Breed: </b><%=@dog.breed%></li><br>
+  <li><b>Age: </b><%=@dog.age%></li><br>
+  <li><b>Owners: </b></li>
+<!-- </ul>
+<ul> -->
+<%@dog.owners.each do |o|%>
+  <blockquote><li><%=o.full_name%></li></blockquote>
+<%end%>
 </ul>
+<%=button_to "Edit", {:action => "edit"}, :method => :get%>
 
 <!--footer-->
 <p><blockquote>

@@ -8,11 +8,12 @@ class DogsController < ApplicationController
   end
 
   def new
-    Dog.new
+    @dog = Dog.new
   end
 
   def create
-    Dog.create
+    @dog = Dog.create(dog_params)
+    redirect_to dogs_path
   end
 
   def edit
@@ -22,7 +23,7 @@ class DogsController < ApplicationController
   def update
     dog = Dog.find(params[:id])
     dog.update(dog_params)
-    redirect_to dogs_path(dog)
+    redirect_to dogs_path
   end
 
 private

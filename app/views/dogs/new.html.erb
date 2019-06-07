@@ -1,1 +1,15 @@
 <h1>dogs new</h1>
+<ul>
+<%=form_for @dog do |f|%>
+  <li><%=f.label "name"%>
+  <%=f.text_field "name"%></li>
+  <li><%=f.label "breed"%>
+  <%=f.text_field "breed"%></li>
+  <li><%=f.label "age"%>
+  <%=f.text_field "age"%></li>
+  <li><%=f.label "dog"%>
+  <%=f.text_field "dog"%></li>
+</ul>
+
+  <%=f.submit "Submit"%>
+<%end%>

@@ -1,1 +1,22 @@
-<h1 color="purple">employees new</h1>
+<h1>employees new</h1>
+
+<ul>
+<%=form_for @employee do |f|%>
+  <li><%=f.label "first name"%>
+  <%=f.text_field "first_name"%></li>
+  <li><%=f.label "last name"%>
+  <%=f.text_field "last_name"%></li>
+  <li><%=f.label "alias"%>
+  <%=f.text_field "alias"%></li>
+  <li><%=f.label "title"%>
+  <%=f.text_field "title"%></li>
+  <li><%=f.label "office"%>
+  <%=f.text_field "office"%></li>
+  <li><%=f.label "image url"%>
+  <%=f.text_field "img_url"%></li>
+  <li><%=f.label "dog"%>
+  <%=f.collection_select(:dog_id, @dogs, :id, :name, prompt:true) %></li>
+
+</ul>
+<%=f.submit "Submit"%>
+<%end%>

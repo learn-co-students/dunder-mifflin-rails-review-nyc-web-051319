@@ -1,9 +1,14 @@
 class Employee < ApplicationRecord
   belongs_to :dog
-  validates :dog_id, uniqueness: true
+  validates :alias, uniqueness: true
+  validates :title, uniqueness: true
 
   def full_name
     self.first_name + " " + self.last_name
   end
+
+  # def options
+  #   @dogs.collect { |dog| dog.name }
+  # end
 
 end #end class
