@@ -1,0 +1,20 @@
+  <div class="row">
+
+  <% @employees.each do |employee| %>
+  <div class="col-sm-3">
+      <div class="card" style="width: 18rem;">
+        <a href=<%= employee_path(employee)%> ><img src="<%= employee.img_url %>", class="card-img-top" ></a>
+        <div class="card-body">
+          <h5 class="card-title"><%= employee.first_name %></h5>
+          <p class="card-text">
+            <%= employee.first_name %> owns a dog named <%= employee.dog.name %>
+            with <% employee.dog.employees.each do |employee| %>
+                  <%= employee.first_name %>
+                  <%end%>
+          </p>
+          <a href=<%= employee_path(employee) %> class="btn btn-primary">Veiw <%= employee.first_name %>'s Page</a>
+        </div>
+      </div>
+      </div>
+  <%end%>
+  </div>

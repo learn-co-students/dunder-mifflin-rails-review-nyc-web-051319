@@ -1,0 +1,11 @@
+<h1>Dogs</h1>
+
+<ul class="list-group list-group-flush">
+
+  <% @dogs.each do |dog| %>
+    <li class="list-group-item list-group-item-action">
+      <%=link_to dog.name, dog_path(dog) %> Has <%= dog.employees.count %> Owners
+    </li>
+  <%end%>
+</ul>
+<br>

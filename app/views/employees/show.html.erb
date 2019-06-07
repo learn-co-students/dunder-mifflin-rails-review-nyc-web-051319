@@ -1,0 +1,40 @@
+<h1><%= @employee.first_name %>'s Page</h1>
+
+<p><img class="img-thumbnail" src=<%=@employee.img_url%> /></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Alias</th>
+      <th scope="col">Title</th>
+      <th scope="col">Office</th>
+      <th scope="col">Dog</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @employee.first_name %></td>
+      <td><%= @employee.last_name %></td>
+      <td><%= @employee.alias %></td>
+      <td><%= @employee.title %></td>
+      <td><%= @employee.office %></td>
+      <td><% if @employee.dog %>
+        <p><%=link_to @employee.dog.name, dog_path(@employee.dog)%></p>
+        <%else%>
+        <p>No dogs</p>
+        <%end%>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container-flex">
+  <div class="row justify-content-md-left">
+<div class="col-md-auto">
+<%=link_to "Update", "#{employee_path}/edit", :class => "btn btn-primary"  %>
+</div>
+<div class="col-md-auto">
+<%= button_to "Delete", { action: "destroy", id: @employee.id }, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger"  %>
+</div></div></div>

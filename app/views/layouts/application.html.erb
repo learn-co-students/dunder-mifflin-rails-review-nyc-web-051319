@@ -6,9 +6,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   </head>
 
   <body>
-    <%= yield %>
+    <body>
+  <nav class="navbar navbar-light bg-light">
+<ul class="nav">
+  <li class="nav-item">
+
+  <%=link_to  image_tag("kisspng-dunder-mifflin-logo-paper-television-image-5bf86d7af3a3b2.065640311543007610998.png"), main_page_path, class:"nav-logo"%>
+  </li>
+<a class="navbar-brand" href=<%= main_page_path %>>
+Dunder Mifflin Pet Shop</a>
+<li class="nav-item">
+  <a class="nav-link" href=<%=employees_path%>>Employees</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href=<%=dogs_path%>>Dogs</a>
+</li>
+
+</ul>
+</nav>
+<div class="container-fluid">
+  <%= yield %>
+</div>
   </body>
 </html>
