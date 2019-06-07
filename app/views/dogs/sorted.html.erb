@@ -1,0 +1,11 @@
+<h1>Dogs Sorted By Amount of Owners</h1>
+<ul>
+  <%@dogs.each do |dog|%>
+  <li>
+    <%=link_to dog.name, dog_path(dog.id)%>
+    <%=dog.employees.count%> employees
+  </li>
+  <%end%>
+</ul>
+
+<%=button_to "Dog Index", dogs_path, method: "get"%>

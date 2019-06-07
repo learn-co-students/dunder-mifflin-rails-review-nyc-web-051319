@@ -1,0 +1,10 @@
+<h1>Employee Index</h1>
+<ul>
+  <%@employees.each do |employee|%>
+  <li>
+    <%=link_to employee.to_s, employee_path(employee.id)%>
+  </li>
+  <%end%>
+</ul>
+
+<%=button_to "New Employee", new_employee_path, method: "get"%>
