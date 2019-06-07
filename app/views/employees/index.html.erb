@@ -1,1 +1,7 @@
-<h1 color="purple">employees index</h1>
+<h1>employees index</h1>
+
+<ul>
+  <% @employees.each do |i| %>
+  <li><%=i.first_name%></li>
+  <%end%>
+</ul>
