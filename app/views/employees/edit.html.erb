@@ -1,0 +1,28 @@
+<h1>Update <%= @employee.first_name %></h1>
+
+<%= form_for @employee, html: {class: "form-group"} do |f| %>
+<div class="form-row">
+  <div class="col-md-auto">
+<%= f.label :first_name %>
+<%= f.text_field :last_name, class: "form-control" %></div>
+  <div class="col-md-auto">
+<%= f.label :alias %>
+<%= f.text_field :alias, class: "form-control" %></div>
+  <div class="col-md-auto">
+<%= f.label :alias %>
+<%= f.text_field :alias, class: "form-control" %></div>
+  <div class="col-md-auto">
+<%= f.label :office %>
+<%= f.text_field :office, class: "form-control" %></div>
+  <div class="col-md-auto">
+<%= f.label :img_url %>
+<%= f.text_field :img_url, class: "form-control" %></div>
+  <div class="col-md-auto">
+<%=f.label :dogs%>
+<div class="dropdown">
+<%= f.collection_select(:dog_id, Dog.all, :id, :name, {prompt: "Select Dog"}, {class: "form-control"})%>
+</div>
+</div>
+</div><br>
+<%= f.submit "Submit", :class => "btn btn-success" %>
+<%end%>

@@ -1,0 +1,39 @@
+<h1><%= @dog.name %>'s Page</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Breed</th>
+      <th scope="col">Age</th>
+      <th scope="col">Owners</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @dog.name %></td>
+      <td><%= @dog.breed %></td>
+      <td><%= @dog.age %></td>
+      <td><% unless @dog.employees.empty? %>
+            <% @dog.employees.each_with_index do |employee, index| %>
+            <p><%= index + 1 %>) <%=link_to employee.first_name, employee_path(employee)%></p>
+            <%end%>
+            <%else%>
+            <p>No owners</p>
+            <%end%>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<div class="container-flex">
+  <div class="row justify-content-md-left">
+<div class="col-md-auto">
+<%=link_to "Update", "#{dog_path}/edit", :class => "btn btn-primary"  %>
+</div>
+<div class="col-md-auto">
+<%= button_to "Delete", { action: "destroy", id: @dog.id }, method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger"  %>
+</div></div></div>

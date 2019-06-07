@@ -1,0 +1,22 @@
+<h1>Dogs</h1>
+
+<ul  class="list-group list-group-flush">
+
+  <% @dogs.each do |dog| %>
+    <li class="list-group-item list-group-item-action">
+      <%=link_to dog.name, dog_path(dog) %>
+    </li>
+  <%end%>
+</ul>
+<br>
+<br>
+<div class="container-flex">
+  <div class="row justify-content-md-left">
+<div class="col-md-auto">
+<%=link_to "New Dog", "#{dogs_path}/new", :class => "btn btn-primary" %>
+</div>
+  <div class="col-md-auto">
+<%=link_to "Order by Owners", sort_by_owners_path, :class => "btn btn-primary"%>
+</div>
+</div>
+</div>
