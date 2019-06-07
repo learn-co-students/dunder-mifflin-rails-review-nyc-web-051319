@@ -15,6 +15,16 @@ class DogsController < ApplicationController
     Dog.create
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    dog = Dog.find(params[:id])
+    dog.update(dog_params)
+    redirect_to dogs_path(dog)
+  end
+
 private
 
   def dog_params
