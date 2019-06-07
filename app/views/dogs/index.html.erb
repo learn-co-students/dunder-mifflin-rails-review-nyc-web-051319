@@ -1,7 +1,9 @@
 <h1>dogs index</h1>
 
 <ul>
-  <% @dogs.each do |i|%>
-  <li><%=i.name%></li>
+  <% @dogs.each do |d|%>
+  <li>
+    <%=link_to d.name, "/dogs/#{d.id}"%>
+  </li>
   <%end%>
 </ul>
