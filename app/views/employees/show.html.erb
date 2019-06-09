@@ -1,0 +1,31 @@
+<h1><%= "#{@employee.to_s}" %></h1>
+
+<% flash.each do |type, msg| %>
+  <div class='alert alert-<%= type %>' role='alert'>
+    <%= msg %>
+  </div>
+<% end %>
+
+<br>
+<br>
+
+<img src=<%= "#{@employee.img_url}" %> alt=<%= "#{@employee.to_s}" %>/>
+
+<p>
+
+Alias: <%= "#{@employee.alias}" %>
+<br>
+<br>
+Title: <%= "#{@employee.title}" %>
+<br>
+<br>
+Office: <%= "#{@employee.office}" %>
+<br>
+<br>
+Dog: <%= link_to @employee.dog_name, "/dogs/#{@employee.dog_id}" %>
+
+<%= button_to 'edit', {:controller => :employees, :action => 'edit', :id => @employee.id }, :method => :get %>
+
+<%= button_to 'delete', {:controller => :employees , :action => 'delete', :id => @employee.id }, :method => :delete %>
+
+</p>
