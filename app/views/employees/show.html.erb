@@ -1,0 +1,16 @@
+<h1><%= @employee.first_name %>'s Page</h1>
+
+Name: <%=@employee.first_name%> <%=@employee.last_name%>
+<br>
+Alias: <%=@employee.alias%>
+<br>
+Title: <%=@employee.title%>
+<br>
+Office: <%=@employee.office%>
+<br>
+Image URL: <img src="<%=@employee.img_url%>" alt="My Dog">
+
+<br>
+<%= link_to "Main Menu", "/employees" %>
+<br>
+<%=button_to "Delete Employee", @employee, :method=> "delete" %>

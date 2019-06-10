@@ -1,0 +1,26 @@
+<h1> All Dogs: </h1>
+
+<ul>
+
+<% @sorted_values = @dogs.map do |dog| %>
+  <% dog.employees.count %>
+<% end.sort.reverse %>
+
+<% @dogs.each do |dog| %>
+  <% @sorted_values.each do |value| %>
+    <% if dog.employees.count == value %>
+    <li>
+      <%= link_to dog.name, dog_path(dog)%>
+    </li>
+    <%end%>
+  <%end%>
+<%end%>
+
+
+</ul>
+
+<br>
+<%= link_to "Create New Dog", "/dogs/new"%>
+
+<br>
+<%= link_to "Sort Dogs", "/dogs/sorted_dogs" %>

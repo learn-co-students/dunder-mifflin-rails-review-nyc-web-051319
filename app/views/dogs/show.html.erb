@@ -1,0 +1,21 @@
+<h1><%= @dog.name %>'s Page</h1>
+
+Name: <%=@dog.name%>
+<br>
+Breed: <%=@dog.breed%>
+<br>
+Age: <%=@dog.age%>
+<br>
+Employees:
+<ul>
+<%@dog.employees.map do |employee|%>
+<li>
+  <%=employee.first_name%>
+</li>
+<%end%>
+</ul>
+
+<br>
+<%= link_to "Main Menu", "/dogs" %>
+<br>
+<%=button_to "Delete Dog", @dog, :method=> "delete" %>
