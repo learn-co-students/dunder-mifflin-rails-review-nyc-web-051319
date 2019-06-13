@@ -1,0 +1,18 @@
+<h1> <%=@dog.name%>'sPage </h1>
+
+<ul>
+
+  <li> <b>Name:</b> <%=@dog.name%> </li>
+  <li> <b>Age:</b> <%=@dog.age%> </li>
+  <li> <b>Breed:</b> <%=@dog.breed%> </li>
+  <li> <b>Employees:</b>
+    <%@dog.employees.each do |employee|%>
+      <% if @dog.employees.count >= 2%>
+      <br><%=link_to employee.first_name + " " + employee.last_name, employee_path(employee)%>
+      <%end%>
+      <%end%>
+   </li>
+</ul>
+
+<%=link_to "Pets Home Page", dogs_path%><br>
+<%=link_to "Employee's Home Page", employees_path%>
