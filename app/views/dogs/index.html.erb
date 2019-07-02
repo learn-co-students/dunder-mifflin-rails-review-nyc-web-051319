@@ -1,0 +1,16 @@
+<h1>dogs index</h1>
+
+<ul>
+  <% @dogs.each do |d|%>
+  <li>
+    <%=link_to d.name, "/dogs/#{d.id}"%>
+  </li>
+  <%end%>
+</ul>
+
+<!--footer-->
+<p><blockquote>
+<a href="/dogs">dogs index.</a>
+<br>
+<a href="/employees">employees index.</a>
+</blockquote></p>
